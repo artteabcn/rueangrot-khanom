@@ -10,7 +10,7 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 
 const { mapsLat, mapsLng, whatsapp, socialUrl, socialType } = siteConfig.contact;
-const mapSrc = `https://www.google.com/maps?q=${mapsLat},${mapsLng}&hl=${locale}&z=16&output=embed`;
+const mapSrc = `https://maps.google.com/maps?q=${mapsLat},${mapsLng}&z=16&output=embed`;
 const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${mapsLat},${mapsLng}`;
 const whatsappHref = `https://wa.me/${whatsapp.replace(/\D/g, "")}`;
 ---
