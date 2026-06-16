@@ -1,6 +1,5 @@
 ---
 import { useTranslations, type Locale } from "@/i18n/utils";
-import Ornament from "./Ornament.astro";
 import { siteConfig } from "@/config/site";
 
 interface Props {
@@ -9,69 +8,70 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-const { mapsLat, mapsLng, whatsapp, socialUrl, socialType } = siteConfig.contact;
+const { mapsLat, mapsLng, whatsapp, socialUrl, socialType, whatsappDisplay, socialHandle } = siteConfig.contact;
 const delta = 0.008;
 const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${mapsLng - delta},${mapsLat - delta},${mapsLng + delta},${mapsLat + delta}&layer=mapnik&marker=${mapsLat},${mapsLng}`;
 const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${mapsLat},${mapsLng}`;
 const whatsappHref = `https://wa.me/${whatsapp.replace(/\D/g, "")}`;
 ---
 
-<section class="container-narrow py-24">
-  <header class="text-center mb-12">
-    <Ornament class="mb-6" />
-    <h2 class="display italic text-4xl md:text-5xl text-[var(--color-gold-soft)]">
+<section class="container-narrow py-24 md:py-32">
+  <header class="text-center mb-14 reveal">
+    <p class="eyebrow mb-4">⌖</p>
+    <h2 class="display italic text-[clamp(2.5rem,6vw,4rem)] text-[var(--color-gold-soft)]">
       {t("contact.title")}
     </h2>
+    <div class="gold-rule mt-6 max-w-[120px] mx-auto"></div>
   </header>
 
-  <div class="grid md:grid-cols-2 gap-8">
-    <div class="panel p-8 flex flex-col justify-between">
-      <div class="space-y-8">
-        <div>
-          <p class="eyebrow mb-2">{t("contact.addressLabel")}</p>
-          <p class="text-lg leading-relaxed text-[var(--color-fg)]">
-            {t("contact.address")}
-          </p>
-        </div>
-
-        <div>
-          <p class="eyebrow mb-2">{t("contact.whatsappLabel")}</p>
-          <a
-            href={whatsappHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-lg text-[var(--color-gold)] hover:text-[var(--color-gold-soft)]"
-          >
-            {siteConfig.contact.whatsappDisplay}
-          </a>
-        </div>
+  <div class="grid md:grid-cols-2 gap-6">
+    <!-- Info panel -->
+    <div class="panel p-8 md:p-10 flex flex-col gap-8 reveal">
+      <div>
+        <p class="eyebrow mb-3">{t("contact.addressLabel")}</p>
+        <p class="text-lg leading-relaxed text-[var(--color-fg)]">{t("contact.address")}</p>
       </div>
 
-      <div class="flex flex-wrap gap-3 mt-8">
-        <a
-          href={directionsHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-ghost">{t("contact.directions")}</a
-        >
+      <div>
+        <p class="eyebrow mb-3">{t("contact.whatsappLabel")}</p>
+        <a href={whatsappHref} target="_blank" rel="noopener noreferrer"
+          class="text-lg text-[var(--color-gold)] hover:text-[var(--color-gold-soft)] transition-colors">
+          {whatsappDisplay}
+        </a>
+      </div>
+
+      {socialType !== "none" && socialUrl && (
+        <div>
+          <p class="eyebrow mb-3 capitalize">{socialType}</p>
+          <a href={socialUrl} target="_blank" rel="noopener noreferrer"
+            class="text-base text-[var(--color-fg-muted)] hover:text-[var(--color-gold)] transition-colors tracking-wide">
+            {socialHandle ? `@${socialHandle}` : t("social.follow")}
+          </a>
+        </div>
+      )}
+
+      <div class="flex flex-wrap gap-3 mt-auto pt-4">
+        <a href={directionsHref} target="_blank" rel="noopener noreferrer" class="btn-ghost">
+          {t("contact.directions")}
+        </a>
         {socialType !== "none" && socialUrl && (
-          <a
-            href={socialUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn-ghost">{t("social.follow")}</a>
+          <a href={socialUrl} target="_blank" rel="noopener noreferrer" class="btn-ghost capitalize">
+            {socialType}
+          </a>
         )}
       </div>
     </div>
 
-    <div class="panel overflow-hidden min-h-[320px]">
+    <!-- Map panel -->
+    <div class="panel overflow-hidden min-h-[340px] reveal reveal-d2">
       <iframe
         src={mapSrc}
         title="Map"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        class="w-full h-full min-h-[320px] grayscale-[0.7] contrast-[1.1] opacity-90"
-        style="border:0;"></iframe>
+        class="w-full h-full min-h-[340px] grayscale-[0.65] contrast-[1.1] opacity-90"
+        style="border:0;"
+      ></iframe>
     </div>
   </div>
 </section>
