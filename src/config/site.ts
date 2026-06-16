@@ -18,8 +18,8 @@ export const siteConfig: SiteConfig = {
     socialHandle: "Rueangrot",
     socialUrl: "https://www.facebook.com/people/Rueangrot-Restaurant/61566602113375/",
     address: "Na Dan Beach, Khanom",
-    mapsLat: 9.6368,
-    mapsLng: 100.2149,
+    mapsLat: 9.1789147,
+    mapsLng: 99.8717281,
   },
   hours: {
     monday: null,
@@ -30,6 +30,7 @@ export const siteConfig: SiteConfig = {
     saturday: {"open":"18:00","close":"00:00"},
     sunday: {"open":"18:00","close":"00:00"},
   },
+  menuMode: "photos",
   images: {
     menu: ["/images/menu1.jpeg","/images/menu2.jpeg"],
   },
