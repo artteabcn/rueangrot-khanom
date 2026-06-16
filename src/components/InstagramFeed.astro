@@ -9,38 +9,44 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-const { socialType, socialUrl } = siteConfig.contact;
+const { socialType, socialUrl, socialHandle } = siteConfig.contact;
 const feedId = import.meta.env.PUBLIC_BEHOLD_FEED_ID;
+
+// Don't render if no social at all
+if (socialType === "none" || !socialUrl) return;
 ---
 
 <section class="container-narrow py-24">
   <header class="text-center mb-12">
     <Ornament class="mb-6" />
     <h2 class="display italic text-4xl md:text-5xl text-[var(--color-gold-soft)]">
-      {t("instagram.title")}
+      {t("social.title")}
     </h2>
-    {socialType !== "none" && socialUrl && (
+    <a
+      href={socialUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-3 inline-block text-sm tracking-[0.18em] text-[var(--color-gold-deep)] hover:text-[var(--color-gold)]"
+    >
+      {t("social.follow")}
+    </a>
+  </header>
+
+  {feedId ? (
+    <>
+      <behold-widget feed-id={feedId} />
+      <script async type="module" src="https://w.behold.so/widget.js" />
+    </>
+  ) : (
+    <div class="text-center">
       <a
         href={socialUrl}
         target="_blank"
         rel="noopener noreferrer"
-        class="mt-3 inline-block text-sm tracking-[0.18em] text-[var(--color-gold-deep)] hover:text-[var(--color-gold)]"
+        class="btn-ghost inline-flex items-center gap-2"
       >
-        {t("social.follow")}
+        {socialType === "instagram" ? "Instagram" : "Facebook"} â†’
       </a>
-    )}
-  </header>
-
-  {
-    feedId ? (
-      <>
-        <behold-widget feed-id={feedId} />
-        <script async type="module" src="https://w.behold.so/widget.js" />
-      </>
-    ) : (
-      <p class="text-center text-sm text-[var(--color-fg-subtle)] italic">
-        Set <code>PUBLIC_BEHOLD_FEED_ID</code> in env to enable the live feed.
-      </p>
-    )
-  }
+    </div>
+  )}
 </section>
