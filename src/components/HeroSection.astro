@@ -141,7 +141,7 @@ const isClosedToday = siteConfig.hours[todayName] === null;
         class:list={[
           "inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border text-[0.66rem] uppercase tracking-[0.28em] backdrop-blur-sm",
           isClosedToday
-            ? "border-[var(--color-line)] text-[var(--color-fg-subtle)] bg-[oklch(0.13_0.018_25/0.4)]"
+            ? "border-white/20 text-white/70 bg-[oklch(0.13_0.018_25/0.55)]"
             : "border-[var(--color-gold-deep)] text-[var(--color-gold-soft)] bg-[oklch(0.18_0.04_25/0.5)]",
         ]}
       >
@@ -149,7 +149,7 @@ const isClosedToday = siteConfig.hours[todayName] === null;
           class:list={[
             "h-1.5 w-1.5 rounded-full",
             isClosedToday
-              ? "bg-[var(--color-fg-subtle)]"
+              ? "bg-white/50"
               : "bg-[var(--color-gold)] hero-pulse",
           ]}
           aria-hidden="true"></span>
