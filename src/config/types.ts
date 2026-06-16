@@ -39,7 +39,9 @@ export interface SiteConfig {
     mapsLng: number;
   };
   hours: Record<DayKey, { open: string; close: string } | null>;
+  menuMode?: "photos" | "items" | "both";
   images: {
+    logo?: string;
     menu: string[];
   };
 }
