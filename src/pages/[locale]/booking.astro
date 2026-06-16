@@ -1,0 +1,33 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BookingForm from "@/components/BookingForm.tsx";
+import Ornament from "@/components/Ornament.astro";
+import { useTranslations, type Locale, locales } from "@/i18n/utils";
+import { siteConfig } from "@/config/site";
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
+const t = useTranslations(locale);
+---
+
+<BaseLayout title={t("booking.title")}>
+  <section class="container-narrow pt-24 pb-24 text-center max-w-2xl">
+    <p class="eyebrow mb-6">{t("hero.eyebrow")}</p>
+    <h1 class="display italic text-5xl md:text-7xl text-[var(--color-gold-soft)] mb-6">
+      {t("booking.title")}
+    </h1>
+    <Ornament class="mb-8" />
+    <p class="text-base text-[var(--color-fg-muted)] leading-relaxed font-light">
+      {t("booking.intro")}
+    </p>
+  </section>
+
+  <section class="container-narrow pb-32 max-w-2xl">
+    <BookingForm client:load locale={locale} />
+  </section>
+</BaseLayout>

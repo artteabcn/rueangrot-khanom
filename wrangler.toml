@@ -1,0 +1,15 @@
+name = "restaurant-slug"
+compatibility_date = "2025-02-13"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "./dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "restaurant-slug-db"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+migrations_dir = "./migrations"
+
+[vars]
+WHATSAPP_TO = "+66000000000"
+RESTAURANT_NAME = "Restaurant Name"
+RESTAURANT_TIMEZONE = "Asia/Bangkok"

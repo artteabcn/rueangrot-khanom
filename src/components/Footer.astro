@@ -1,0 +1,83 @@
+---
+import { useTranslations, localizedPath, type Locale } from "@/i18n/utils";
+import Ornament from "./Ornament.astro";
+import { siteConfig } from "@/config/site";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const year = new Date().getFullYear();
+const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${siteConfig.contact.mapsLat},${siteConfig.contact.mapsLng}`;
+const whatsappHref = `https://wa.me/${siteConfig.contact.whatsapp.replace(/\D/g, "")}`;
+---
+
+<footer class="mt-32 pt-20 pb-12 border-t border-[var(--color-line)]">
+  <div class="container-narrow">
+    <div class="grid md:grid-cols-3 gap-10 md:gap-8 text-center md:text-left mb-16">
+      <div>
+        <p class="eyebrow mb-3">{t("contact.addressLabel")}</p>
+        <p class="text-sm text-[var(--color-fg-muted)] leading-relaxed">
+          {t("footer.addressShort")}
+        </p>
+        <a
+          href={directionsHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block mt-2 text-[0.7rem] uppercase tracking-[0.22em] text-[var(--color-gold-deep)] hover:text-[var(--color-gold)] transition-colors"
+        >
+          {t("contact.directions")} →
+        </a>
+      </div>
+
+      <div>
+        <p class="eyebrow mb-3">{t("hours.title")}</p>
+        <p class="text-sm text-[var(--color-fg-muted)] leading-relaxed">
+          {t("footer.hoursShort")}
+        </p>
+        <a
+          href={localizedPath(locale, "/booking")}
+          class="inline-block mt-2 text-[0.7rem] uppercase tracking-[0.22em] text-[var(--color-gold-deep)] hover:text-[var(--color-gold)] transition-colors"
+        >
+          {t("reservation.cta")} →
+        </a>
+      </div>
+
+      <div>
+        <p class="eyebrow mb-3">{t("contact.whatsappLabel")}</p>
+        <a
+          href={whatsappHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-[var(--color-gold)] hover:text-[var(--color-gold-soft)]"
+        >
+          {siteConfig.contact.whatsappDisplay}
+        </a>
+        {siteConfig.contact.socialType !== "none" && siteConfig.contact.socialUrl && (
+          <a
+            href={siteConfig.contact.socialUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block mt-2 text-[0.7rem] uppercase tracking-[0.22em] text-[var(--color-gold-deep)] hover:text-[var(--color-gold)] transition-colors"
+          >
+            {t("social.follow")} →
+          </a>
+        )}
+      </div>
+    </div>
+
+    <div class="text-center">
+      <Ornament class="mb-8" />
+      <p class="display italic text-3xl text-[var(--color-gold-soft)]">
+        {siteConfig.name}
+      </p>
+      <p class="mt-2 text-[0.7rem] uppercase tracking-[0.32em] text-[var(--color-fg-subtle)]">
+        {t("footer.tagline")}
+      </p>
+      <p class="mt-8 text-xs text-[var(--color-fg-subtle)]">
+        © {year} · {t("footer.rights")}
+      </p>
+    </div>
+  </div>
+</footer>

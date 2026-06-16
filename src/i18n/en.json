@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "booking": "Reservations",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Location · Area",
+    "tonight": "Tonight",
+    "title": "Restaurant Name",
+    "subtitle": "An intimate dining experience.",
+    "cta": "Reserve a table",
+    "secondaryCta": "View hours"
+  },
+  "about": {
+    "title": "The room",
+    "pullquote": "Come hungry, stay late.",
+    "body": "A description of the restaurant and its atmosphere."
+  },
+  "hours": {
+    "title": "Hours",
+    "tonightLabel": "Tonight",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "openLabel": "Open this evening",
+    "closedLabel": "Closed today",
+    "openNow": "Open now",
+    "openSubline": "Service until midnight",
+    "openingTonight": "Opening tonight",
+    "openingSubline": "First seating at 18:00",
+    "closedSubline": "See the week below"
+  },
+  "reservation": {
+    "line": "A handful of tables. Reserve yours.",
+    "cta": "Reserve a table"
+  },
+  "menu": {
+    "title": "Menu",
+    "intro": "A short menu, written each season.",
+    "comingSoon": "Full menu coming soon.",
+    "comingSoonSub": "We're finishing the season's edition. In the meantime, the kitchen will guide you through tonight's plates at the table.",
+    "cta": "Reserve to taste tonight"
+  },
+  "booking": {
+    "title": "Reserve a table",
+    "intro": "We confirm every booking by WhatsApp. The kitchen seats from 18:00.",
+    "meta": {
+      "title": "Reservation note",
+      "serviceLabel": "Service",
+      "serviceValue": "Tue – Sun · 18:00 – 00:00",
+      "confirmLabel": "Confirmation",
+      "confirmValue": "Replied on WhatsApp, usually within the hour.",
+      "directLabel": "Last-minute or larger party?",
+      "directValue": "Reach the room directly on WhatsApp."
+    },
+    "name": "Your name",
+    "phone": "Phone (with country code)",
+    "email": "Email (optional)",
+    "partySize": "Number of guests",
+    "date": "Date",
+    "time": "Time",
+    "notes": "Anything we should know? Allergies, occasion…",
+    "submit": "Request reservation",
+    "submitting": "Sending…",
+    "successTitle": "Thank you.",
+    "successBody": "Your request is in. We'll confirm by WhatsApp shortly.",
+    "errorTitle": "Something went wrong.",
+    "errorBody": "Please try again, or message us directly on WhatsApp."
+  },
+  "validation": {
+    "name": "Please enter your name.",
+    "phone": "Please enter a valid phone number.",
+    "email": "Please enter a valid email.",
+    "partySize": "Party size must be between 1 and 20.",
+    "date": "Please choose a date.",
+    "time": "Please choose a time."
+  },
+  "contact": {
+    "title": "Find us",
+    "addressLabel": "Address",
+    "address": "Restaurant address goes here",
+    "whatsappLabel": "WhatsApp",
+    "directions": "Open in Google Maps"
+  },
+  "social": {
+    "title": "Latest from the room",
+    "follow": "Follow us"
+  },
+  "footer": {
+    "tagline": "Restaurant Name · Location",
+    "rights": "All rights reserved.",
+    "addressShort": "Area, City",
+    "hoursShort": "Tue – Sun · 18:00 – Midnight"
+  }
+}

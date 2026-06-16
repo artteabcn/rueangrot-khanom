@@ -1,0 +1,102 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "menu": "Carte",
+    "booking": "Réservations",
+    "contact": "Contact"
+  },
+  "hero": {
+    "eyebrow": "Lieu · Quartier",
+    "tonight": "Ce soir",
+    "title": "Restaurant Name",
+    "subtitle": "Une expérience gastronomique intime.",
+    "cta": "Réserver une table",
+    "secondaryCta": "Voir les horaires"
+  },
+  "about": {
+    "title": "La salle",
+    "pullquote": "Venez avec faim, restez tard.",
+    "body": "Une description du restaurant et de son ambiance."
+  },
+  "hours": {
+    "title": "Horaires",
+    "tonightLabel": "Ce soir",
+    "monday": "Lundi",
+    "tuesday": "Mardi",
+    "wednesday": "Mercredi",
+    "thursday": "Jeudi",
+    "friday": "Vendredi",
+    "saturday": "Samedi",
+    "sunday": "Dimanche",
+    "closed": "Fermé",
+    "openLabel": "Ouvert ce soir",
+    "closedLabel": "Fermé aujourd'hui",
+    "openNow": "Ouvert ce soir",
+    "openSubline": "Service jusqu'à minuit",
+    "openingTonight": "Ouverture ce soir",
+    "openingSubline": "Premier service à 18h00",
+    "closedSubline": "Voir la semaine ci-dessous"
+  },
+  "reservation": {
+    "line": "Quelques tables, c'est tout. Réservez la vôtre.",
+    "cta": "Réserver une table"
+  },
+  "menu": {
+    "title": "La carte",
+    "intro": "Une carte courte, écrite au fil des saisons.",
+    "comingSoon": "La carte complète arrive bientôt.",
+    "comingSoonSub": "Nous finalisons l'édition de la saison. En attendant, la salle vous guide à table parmi les plats du soir.",
+    "cta": "Réserver pour goûter ce soir"
+  },
+  "booking": {
+    "title": "Réserver une table",
+    "intro": "Nous confirmons chaque réservation par WhatsApp. Le service commence à 18h00.",
+    "meta": {
+      "title": "À propos de votre réservation",
+      "serviceLabel": "Service",
+      "serviceValue": "Mar – Dim · 18h00 – 00h00",
+      "confirmLabel": "Confirmation",
+      "confirmValue": "Réponse par WhatsApp, en général sous une heure.",
+      "directLabel": "Dernière minute ou grand groupe ?",
+      "directValue": "Joignez la salle directement sur WhatsApp."
+    },
+    "name": "Votre nom",
+    "phone": "Téléphone (avec indicatif)",
+    "email": "Email (facultatif)",
+    "partySize": "Nombre de personnes",
+    "date": "Date",
+    "time": "Heure",
+    "notes": "Quelque chose à nous dire ? Allergies, occasion…",
+    "submit": "Demander une réservation",
+    "submitting": "Envoi…",
+    "successTitle": "Merci.",
+    "successBody": "Votre demande est bien reçue. Nous confirmons par WhatsApp sous peu.",
+    "errorTitle": "Une erreur est survenue.",
+    "errorBody": "Merci de réessayer, ou contactez-nous directement sur WhatsApp."
+  },
+  "validation": {
+    "name": "Merci d'indiquer votre nom.",
+    "phone": "Numéro de téléphone invalide.",
+    "email": "Adresse email invalide.",
+    "partySize": "Le nombre de personnes doit être entre 1 et 20.",
+    "date": "Merci de choisir une date.",
+    "time": "Merci de choisir une heure."
+  },
+  "contact": {
+    "title": "Nous trouver",
+    "addressLabel": "Adresse",
+    "address": "L'adresse du restaurant ici",
+    "whatsappLabel": "WhatsApp",
+    "directions": "Ouvrir dans Google Maps"
+  },
+  "footer": {
+    "tagline": "Restaurant Name · Lieu",
+    "rights": "Tous droits réservés.",
+    "addressShort": "Quartier, Ville",
+    "hoursShort": "Mar – Dim · 18h – Minuit"
+  },
+  "social": {
+    "title": "Dernières nouvelles",
+    "follow": "Nous suivre"
+  }
+}

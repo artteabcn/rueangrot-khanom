@@ -1,0 +1,62 @@
+---
+import { useTranslations, type Locale } from "@/i18n/utils";
+import { siteConfig } from "@/config/site";
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const dayKeys = [
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday",
+  "sunday",
+] as const;
+
+const tz = siteConfig.timezone;
+const fmt = new Intl.DateTimeFormat("en-US", { weekday: "long", timeZone: tz });
+const todayName = fmt.format(new Date()).toLowerCase();
+---
+
+<section class="container-narrow py-24" id="hours">
+  <header class="text-center mb-12">
+    <p class="eyebrow mb-3">⌖</p>
+    <h2 class="display italic text-4xl md:text-5xl text-[var(--color-gold-soft)]">
+      {t("hours.title")}
+    </h2>
+  </header>
+
+  <div class="panel max-w-md mx-auto p-8">
+    <ul class="divide-y divide-[var(--color-line)]">
+      {
+        dayKeys.map((day) => {
+          const slot = siteConfig.hours[day];
+          const isToday = day === todayName;
+          return (
+            <li
+              class:list={[
+                "flex items-baseline justify-between py-3",
+                isToday && "text-[var(--color-gold)]",
+              ]}
+            >
+              <span class="text-sm tracking-wider uppercase font-light">
+                {t(`hours.${day}`)}
+                {isToday && (
+                  <span class="ml-2 text-[0.6rem] tracking-[0.3em]">·</span>
+                )}
+              </span>
+              <span class="font-display italic text-lg">
+                {slot ? `${slot.open} – ${slot.close}` : t("hours.closed")}
+              </span>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </div>
+</section>

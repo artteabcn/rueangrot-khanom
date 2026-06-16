@@ -1,0 +1,15 @@
+---
+export const prerender = false;
+
+const cookie = Astro.request.headers.get("cookie") ?? "";
+const match = cookie.match(/(?:^|;\s*)locale=(en|fr|th)/);
+const accept = Astro.request.headers.get("accept-language") ?? "";
+const fromHeader = accept.toLowerCase().startsWith("fr")
+  ? "fr"
+  : accept.toLowerCase().startsWith("th")
+    ? "th"
+    : "en";
+const locale = match?.[1] ?? fromHeader;
+
+return Astro.redirect(`/${locale}/`, 302);
+---

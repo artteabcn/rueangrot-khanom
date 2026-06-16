@@ -1,0 +1,25 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: cls = "" } = Astro.props;
+---
+
+<div class={`flex items-center justify-center gap-4 ${cls}`} aria-hidden="true">
+  <span class="gold-rule flex-1 max-w-[160px]"></span>
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="0.7"
+    class="text-[var(--color-gold)]"
+  >
+    <path
+      d="M12 3 L13.5 10.5 L21 12 L13.5 13.5 L12 21 L10.5 13.5 L3 12 L10.5 10.5 Z"
+      opacity="0.85"></path>
+    <circle cx="12" cy="12" r="1" fill="currentColor"></circle>
+  </svg>
+  <span class="gold-rule flex-1 max-w-[160px]"></span>
+</div>

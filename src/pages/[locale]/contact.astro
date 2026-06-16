@@ -1,0 +1,27 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ContactSection from "@/components/ContactSection.astro";
+import OpeningHours from "@/components/OpeningHours.astro";
+import { useTranslations, type Locale, locales } from "@/i18n/utils";
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return locales.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params as { locale: Locale };
+const t = useTranslations(locale);
+---
+
+<BaseLayout title={t("contact.title")}>
+  <section class="container-narrow pt-24 pb-8 text-center">
+    <p class="eyebrow mb-6">{t("hero.eyebrow")}</p>
+    <h1 class="display italic text-5xl md:text-7xl text-[var(--color-gold-soft)]">
+      {t("contact.title")}
+    </h1>
+  </section>
+
+  <ContactSection locale={locale} />
+  <OpeningHours locale={locale} />
+</BaseLayout>
