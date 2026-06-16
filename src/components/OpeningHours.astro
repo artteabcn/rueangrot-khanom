@@ -25,7 +25,7 @@ const todayName = fmt.format(new Date()).toLowerCase();
 
 <section class="container-narrow py-24" id="hours">
   <header class="text-center mb-12">
-    <p class="eyebrow mb-3">⌖</p>
+    <p class="eyebrow mb-3">âŒ–</p>
     <h2 class="display italic text-4xl md:text-5xl text-[var(--color-gold-soft)]">
       {t("hours.title")}
     </h2>
@@ -38,20 +38,26 @@ const todayName = fmt.format(new Date()).toLowerCase();
           const slot = siteConfig.hours[day];
           const isToday = day === todayName;
           return (
-            <li
-              class:list={[
-                "flex items-baseline justify-between py-3",
-                isToday && "text-[var(--color-gold)]",
-              ]}
-            >
-              <span class="text-sm tracking-wider uppercase font-light">
+            <li class="flex items-baseline justify-between py-3">
+              <span
+                class:list={[
+                  "text-sm tracking-wider uppercase font-light",
+                  isToday && "text-[var(--color-gold)]",
+                ]}
+              >
                 {t(`hours.${day}`)}
                 {isToday && (
-                  <span class="ml-2 text-[0.6rem] tracking-[0.3em]">·</span>
+                  <span class="ml-2 text-[0.6rem] tracking-[0.3em]">Â·</span>
                 )}
               </span>
-              <span class="font-display italic text-lg">
-                {slot ? `${slot.open} – ${slot.close}` : t("hours.closed")}
+              <span
+                class:list={[
+                  "font-display italic text-lg",
+                  isToday && slot && "text-[var(--color-gold)]",
+                  isToday && !slot && "text-[var(--color-fg-muted)]",
+                ]}
+              >
+                {slot ? `${slot.open} â€“ ${slot.close}` : t("hours.closed")}
               </span>
             </li>
           );
