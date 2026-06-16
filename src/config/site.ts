@@ -32,6 +32,7 @@ export const siteConfig: SiteConfig = {
   },
   menuMode: "photos",
   images: {
+    logo: "/images/logo.svg",
     menu: ["/images/menu1.jpeg","/images/menu2.jpeg"],
   },
 };
