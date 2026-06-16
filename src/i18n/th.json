@@ -1,102 +1,102 @@
 {
   "nav": {
-    "home": "หน้าแรก",
-    "menu": "เมนู",
-    "booking": "จองโต๊ะ",
-    "contact": "ติดต่อ"
+    "home": "Home",
+    "menu": "Menu",
+    "booking": "Reservations",
+    "contact": "Contact"
   },
   "hero": {
-    "eyebrow": "สถานที่ · บริเวณ",
-    "tonight": "คืนนี้",
-    "title": "Restaurant Name",
-    "subtitle": "ประสบการณ์รับประทานอาหารที่อบอุ่นและเป็นส่วนตัว",
-    "cta": "จองโต๊ะ",
-    "secondaryCta": "ดูเวลาทำการ"
+    "eyebrow": "In the beautiful Khanom",
+    "tonight": "Tonight",
+    "title": "Rueangrot Restaurant",
+    "subtitle": "Delicious German and Local Food",
+    "cta": "Reserve a table",
+    "secondaryCta": "View hours"
   },
   "about": {
-    "title": "ห้องอาหาร",
-    "pullquote": "มาด้วยความหิว แล้วอยู่ให้ดึก",
-    "body": "คำอธิบายร้านอาหารและบรรยากาศ"
+    "title": "The Restaurant",
+    "pullquote": "Enjoy our fresh food in our cosy garden",
+    "body": "Nestled in the beautiful beach road of Khanom"
   },
   "hours": {
-    "title": "เวลาทำการ",
-    "tonightLabel": "คืนนี้",
-    "monday": "จันทร์",
-    "tuesday": "อังคาร",
-    "wednesday": "พุธ",
-    "thursday": "พฤหัสบดี",
-    "friday": "ศุกร์",
-    "saturday": "เสาร์",
-    "sunday": "อาทิตย์",
-    "closed": "ปิด",
-    "openLabel": "เปิดให้บริการคืนนี้",
-    "closedLabel": "ปิดวันนี้",
-    "openNow": "เปิดคืนนี้",
-    "openSubline": "ให้บริการถึงเที่ยงคืน",
-    "openingTonight": "เปิดคืนนี้",
-    "openingSubline": "เริ่มบริการ 18:00 น.",
-    "closedSubline": "ดูตารางสัปดาห์ด้านล่าง"
+    "title": "Hours",
+    "tonightLabel": "Tonight",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "openLabel": "Open this evening",
+    "closedLabel": "Closed today",
+    "openNow": "Open now",
+    "openSubline": "Open tonight",
+    "openingTonight": "Opening tonight",
+    "openingSubline": "See hours below",
+    "closedSubline": "See the week below"
   },
   "reservation": {
-    "line": "โต๊ะมีจำนวนจำกัด จองของคุณคืนนี้",
-    "cta": "จองโต๊ะ"
+    "line": "Reserve your table.",
+    "cta": "Reserve a table"
   },
   "menu": {
-    "title": "เมนู",
-    "intro": "เมนูสั้นๆ เปลี่ยนตามฤดูกาล",
-    "comingSoon": "เมนูฉบับเต็มเร็วๆ นี้",
-    "comingSoonSub": "เรากำลังจัดทำเมนูประจำฤดูกาล ระหว่างนี้ห้องอาหารจะแนะนำจานพิเศษของคืนนี้ที่โต๊ะของคุณ",
-    "cta": "จองโต๊ะเพื่อลิ้มลองคืนนี้"
+    "title": "Menu",
+    "intro": "Wonderful German food",
+    "comingSoon": "Full menu coming soon.",
+    "comingSoonSub": "Ask the kitchen about tonight's plates.",
+    "cta": "Reserve to taste tonight"
   },
   "booking": {
-    "title": "จองโต๊ะ",
-    "intro": "เรายืนยันการจองทุกครั้งทาง WhatsApp ครัวเริ่มให้บริการตั้งแต่ 18:00 น.",
+    "title": "Reserve a table",
+    "intro": "We confirm every booking by WhatsApp.",
     "meta": {
-      "title": "หมายเหตุการจอง",
-      "serviceLabel": "เวลาให้บริการ",
-      "serviceValue": "อังคาร – อาทิตย์ · 18:00 – 00:00",
-      "confirmLabel": "การยืนยัน",
-      "confirmValue": "ตอบกลับทาง WhatsApp ภายในหนึ่งชั่วโมง",
-      "directLabel": "นาทีสุดท้ายหรือกลุ่มใหญ่?",
-      "directValue": "ติดต่อห้องอาหารโดยตรงทาง WhatsApp"
+      "title": "Reservation note",
+      "serviceLabel": "Service",
+      "serviceValue": "Tue - Sun - 12 to 9am",
+      "confirmLabel": "Confirmation",
+      "confirmValue": "Replied on WhatsApp.",
+      "directLabel": "Last-minute?",
+      "directValue": "Reach us directly on WhatsApp."
     },
-    "name": "ชื่อของคุณ",
-    "phone": "เบอร์โทรศัพท์ (พร้อมรหัสประเทศ)",
-    "email": "อีเมล (ไม่บังคับ)",
-    "partySize": "จำนวนแขก",
-    "date": "วันที่",
-    "time": "เวลา",
-    "notes": "มีอะไรอยากให้เราทราบ? อาการแพ้อาหาร โอกาสพิเศษ…",
-    "submit": "ส่งคำขอจอง",
-    "submitting": "กำลังส่ง…",
-    "successTitle": "ขอบคุณค่ะ",
-    "successBody": "ได้รับคำขอแล้ว เราจะยืนยันทาง WhatsApp ในไม่ช้า",
-    "errorTitle": "เกิดข้อผิดพลาด",
-    "errorBody": "กรุณาลองอีกครั้ง หรือติดต่อเราทาง WhatsApp โดยตรง"
+    "name": "Your name",
+    "phone": "Phone (with country code)",
+    "email": "Email (optional)",
+    "partySize": "Number of guests",
+    "date": "Date",
+    "time": "Time",
+    "notes": "Anything we should know?",
+    "submit": "Request reservation",
+    "submitting": "Sending…",
+    "successTitle": "Thank you.",
+    "successBody": "Your request is in. We'll confirm by WhatsApp shortly.",
+    "errorTitle": "Something went wrong.",
+    "errorBody": "Please try again, or message us directly on WhatsApp."
   },
   "validation": {
-    "name": "กรุณาระบุชื่อของคุณ",
-    "phone": "เบอร์โทรไม่ถูกต้อง",
-    "email": "อีเมลไม่ถูกต้อง",
-    "partySize": "จำนวนแขกต้องอยู่ระหว่าง 1 ถึง 20",
-    "date": "กรุณาเลือกวันที่",
-    "time": "กรุณาเลือกเวลา"
+    "name": "Please enter your name.",
+    "phone": "Please enter a valid phone number.",
+    "email": "Please enter a valid email.",
+    "partySize": "Party size must be between 1 and 20.",
+    "date": "Please choose a date.",
+    "time": "Please choose a time."
   },
   "contact": {
-    "title": "หาเราได้ที่",
-    "addressLabel": "ที่อยู่",
-    "address": "ที่อยู่ร้านอาหารที่นี่",
+    "title": "Find us",
+    "addressLabel": "Address",
+    "address": "Na Dan Beach, Khanom",
     "whatsappLabel": "WhatsApp",
-    "directions": "เปิดใน Google Maps"
-  },
-  "footer": {
-    "tagline": "Restaurant Name · สถานที่",
-    "rights": "สงวนลิขสิทธิ์",
-    "addressShort": "บริเวณ เมือง",
-    "hoursShort": "อังคาร – อาทิตย์ · 18:00 – เที่ยงคืน"
+    "directions": "Open in Google Maps"
   },
   "social": {
-    "title": "ล่าสุดจากเรา",
-    "follow": "ติดตามเรา"
+    "title": "Latest from the room",
+    "follow": "Follow us · Rueangrot"
+  },
+  "footer": {
+    "tagline": "Rueangrot Khanom",
+    "rights": "All rights reserved.",
+    "addressShort": "Na Dan - Khanom",
+    "hoursShort": "Tue - Sun - 12 to 9am"
   }
 }
