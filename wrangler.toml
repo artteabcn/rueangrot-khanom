@@ -6,10 +6,11 @@ pages_build_output_dir = "./dist"
 [[d1_databases]]
 binding = "DB"
 database_name = "rueangrot-khanom-db"
-database_id = "REPLACE_WITH_D1_ID"
+database_id = "e42c7867-77fc-45d4-baa5-1f5f916ff39e"
 migrations_dir = "./migrations"
 
 [vars]
-WHATSAPP_TO = "061 963 8979"
+WHATSAPP_TO = "+66000000000"
 RESTAURANT_NAME = "Rueangrot Khanom"
 RESTAURANT_TIMEZONE = "Asia/Bangkok"
+
