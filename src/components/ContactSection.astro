@@ -10,7 +10,8 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 
 const { mapsLat, mapsLng, whatsapp, socialUrl, socialType } = siteConfig.contact;
-const mapSrc = `https://maps.google.com/maps?q=${mapsLat},${mapsLng}&z=16&output=embed`;
+const delta = 0.008;
+const mapSrc = `https://www.openstreetmap.org/export/embed.html?bbox=${mapsLng - delta},${mapsLat - delta},${mapsLng + delta},${mapsLat + delta}&layer=mapnik&marker=${mapsLat},${mapsLng}`;
 const directionsHref = `https://www.google.com/maps/dir/?api=1&destination=${mapsLat},${mapsLng}`;
 const whatsappHref = `https://wa.me/${whatsapp.replace(/\D/g, "")}`;
 ---
