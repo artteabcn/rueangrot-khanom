@@ -6,17 +6,17 @@
     "contact": "Contact"
   },
   "hero": {
-    "eyebrow": "Location · Area",
+    "eyebrow": "In the beautiful Khanom",
     "tonight": "Tonight",
-    "title": "Restaurant Name",
-    "subtitle": "An intimate dining experience.",
+    "title": "Rueangrot Restaurant",
+    "subtitle": "Delicious German and Local Food",
     "cta": "Reserve a table",
     "secondaryCta": "View hours"
   },
   "about": {
-    "title": "The room",
-    "pullquote": "Come hungry, stay late.",
-    "body": "A description of the restaurant and its atmosphere."
+    "title": "The Restaurant",
+    "pullquote": "Enjoy our fresh food in our cosy garden",
+    "body": "Nestled in the beautiful beach road of Khanom"
   },
   "hours": {
     "title": "Hours",
@@ -32,33 +32,33 @@
     "openLabel": "Open this evening",
     "closedLabel": "Closed today",
     "openNow": "Open now",
-    "openSubline": "Service until midnight",
+    "openSubline": "Open tonight",
     "openingTonight": "Opening tonight",
-    "openingSubline": "First seating at 18:00",
+    "openingSubline": "See hours below",
     "closedSubline": "See the week below"
   },
   "reservation": {
-    "line": "A handful of tables. Reserve yours.",
+    "line": "Reserve your table.",
     "cta": "Reserve a table"
   },
   "menu": {
     "title": "Menu",
-    "intro": "A short menu, written each season.",
+    "intro": "Wonderful German food",
     "comingSoon": "Full menu coming soon.",
-    "comingSoonSub": "We're finishing the season's edition. In the meantime, the kitchen will guide you through tonight's plates at the table.",
+    "comingSoonSub": "Ask the kitchen about tonight's plates.",
     "cta": "Reserve to taste tonight"
   },
   "booking": {
     "title": "Reserve a table",
-    "intro": "We confirm every booking by WhatsApp. The kitchen seats from 18:00.",
+    "intro": "We confirm every booking by WhatsApp.",
     "meta": {
       "title": "Reservation note",
       "serviceLabel": "Service",
-      "serviceValue": "Tue – Sun · 18:00 – 00:00",
+      "serviceValue": "Tue - Sun - 12 to 9am",
       "confirmLabel": "Confirmation",
-      "confirmValue": "Replied on WhatsApp, usually within the hour.",
-      "directLabel": "Last-minute or larger party?",
-      "directValue": "Reach the room directly on WhatsApp."
+      "confirmValue": "Replied on WhatsApp.",
+      "directLabel": "Last-minute?",
+      "directValue": "Reach us directly on WhatsApp."
     },
     "name": "Your name",
     "phone": "Phone (with country code)",
@@ -66,7 +66,7 @@
     "partySize": "Number of guests",
     "date": "Date",
     "time": "Time",
-    "notes": "Anything we should know? Allergies, occasion…",
+    "notes": "Anything we should know?",
     "submit": "Request reservation",
     "submitting": "Sending…",
     "successTitle": "Thank you.",
@@ -85,18 +85,18 @@
   "contact": {
     "title": "Find us",
     "addressLabel": "Address",
-    "address": "Restaurant address goes here",
+    "address": "Na Dan Beach, Khanom",
     "whatsappLabel": "WhatsApp",
     "directions": "Open in Google Maps"
   },
   "social": {
     "title": "Latest from the room",
-    "follow": "Follow us"
+    "follow": "Follow us · Rueangrot"
   },
   "footer": {
-    "tagline": "Restaurant Name · Location",
+    "tagline": "Rueangrot Khanom",
     "rights": "All rights reserved.",
-    "addressShort": "Area, City",
-    "hoursShort": "Tue – Sun · 18:00 – Midnight"
+    "addressShort": "Na Dan - Khanom",
+    "hoursShort": "Tue - Sun - 12 to 9am"
   }
 }
