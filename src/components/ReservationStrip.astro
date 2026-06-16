@@ -8,41 +8,28 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 ---
 
-<section class="relative my-16 md:my-24" aria-label={t("reservation.line")}>
-  <div
-    class="relative overflow-hidden border-y border-[var(--color-line-strong)]"
-    style="background:
+<section class="relative my-20 md:my-32 reveal" aria-label={t("reservation.line")}>
+  <div class="relative overflow-hidden border-y border-[var(--color-line-strong)]" style="
+    background:
       linear-gradient(180deg,
-        oklch(0.22 0.07 22 / 0.85),
-        oklch(0.16 0.05 22 / 0.85)),
-      radial-gradient(ellipse at 30% 50%, oklch(0.4 0.13 22 / 0.45), transparent 60%),
-      radial-gradient(ellipse at 80% 50%, oklch(0.5 0.1 60 / 0.18), transparent 55%);
-    "
-  >
-    <!-- thin top + bottom gold rules -->
-    <div
-      class="absolute top-0 left-0 right-0 h-px opacity-50"
-      style="background: linear-gradient(to right, transparent, var(--color-gold-deep) 30%, var(--color-gold) 50%, var(--color-gold-deep) 70%, transparent);"
-    >
-    </div>
-    <div
-      class="absolute bottom-0 left-0 right-0 h-px opacity-30"
-      style="background: linear-gradient(to right, transparent, var(--color-gold-deep) 30%, var(--color-gold) 50%, var(--color-gold-deep) 70%, transparent);"
-    >
-    </div>
+        oklch(from var(--color-accent-deep) l c h / 0.92),
+        oklch(from var(--color-accent) l c h / 0.88)),
+      radial-gradient(ellipse at 30% 50%, oklch(from var(--color-gold) l c h / 0.15), transparent 60%),
+      radial-gradient(ellipse at 80% 50%, oklch(from var(--color-accent-bright) l c h / 0.12), transparent 55%);
+  ">
+    <!-- Gold hairlines -->
+    <div class="absolute top-0 inset-x-0 h-px opacity-45" style="background: linear-gradient(to right, transparent, var(--color-gold-deep) 30%, var(--color-gold) 50%, var(--color-gold-deep) 70%, transparent);"></div>
+    <div class="absolute bottom-0 inset-x-0 h-px opacity-30" style="background: linear-gradient(to right, transparent, var(--color-gold-deep) 30%, var(--color-gold) 50%, var(--color-gold-deep) 70%, transparent);"></div>
 
-    <div
-      class="container-narrow flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-12 py-10 md:py-12 text-center md:text-left"
-    >
+    <div class="container-narrow flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 md:gap-16 py-12 md:py-16 text-center md:text-left">
       <div>
-        <p class="eyebrow mb-2 text-[var(--color-gold)]">⌖ {t("hero.tonight")}</p>
-        <p
-          class="display italic text-2xl md:text-3xl text-[var(--color-gold-soft)] leading-snug max-w-xl"
-        >
+        <p class="eyebrow mb-3 text-[var(--color-gold)]">⌖ {t("hero.tonight")}</p>
+        <p class="display italic text-2xl md:text-4xl text-[var(--color-gold-soft)] leading-[1.1] max-w-lg">
           {t("reservation.line")}
         </p>
       </div>
-      <a href={localizedPath(locale, "/booking")} class="btn-primary shrink-0">
+      <a href={localizedPath(locale, "/booking")} class="btn-primary shrink-0"
+        style="border-color: oklch(from var(--color-gold) l c h / 0.5); color: var(--color-gold-soft);">
         {t("reservation.cta")}
       </a>
     </div>
