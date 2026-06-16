@@ -1,6 +1,5 @@
 ---
 import { useTranslations, localizedPath, type Locale } from "@/i18n/utils";
-import Ornament from "./Ornament.astro";
 import { siteConfig } from "@/config/site";
 
 interface Props {
@@ -9,269 +8,136 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-const fmt = new Intl.DateTimeFormat("en-US", {
-  weekday: "long",
-  timeZone: siteConfig.timezone,
-});
+const fmt = new Intl.DateTimeFormat("en-US", { weekday: "long", timeZone: siteConfig.timezone });
 const todayName = fmt.format(new Date()).toLowerCase() as keyof typeof siteConfig.hours;
 const isClosedToday = siteConfig.hours[todayName] === null;
+const todaySlot = siteConfig.hours[todayName];
 ---
 
-<section
-  class="relative overflow-hidden min-h-[92vh] flex items-center"
-  aria-label={siteConfig.name}
->
-  <!-- candlelight layers -->
+<section class="relative overflow-hidden min-h-[100dvh] flex items-center" aria-label={siteConfig.name}>
+
+  <!-- Theme-aware ambient glow layers -->
   <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
-    <div
-      class="absolute inset-0"
-      style="background:
-        radial-gradient(circle at 18% 28%, oklch(0.55 0.16 35 / 0.32), transparent 38%),
-        radial-gradient(circle at 82% 22%, oklch(0.5 0.13 28 / 0.22), transparent 42%),
-        radial-gradient(circle at 60% 78%, oklch(0.6 0.12 60 / 0.16), transparent 50%),
-        radial-gradient(circle at 22% 80%, oklch(0.45 0.15 22 / 0.28), transparent 45%);"
-    >
-    </div>
-    <!-- soft animated flicker -->
-    <div class="absolute inset-0 hero-flicker"></div>
-    <!-- film-grain feel -->
-    <div
-      class="absolute inset-0 opacity-[0.05] mix-blend-overlay"
-      style="background-image:
-        repeating-linear-gradient(0deg, #fff 0 1px, transparent 1px 3px),
-        repeating-linear-gradient(90deg, #fff 0 1px, transparent 1px 3px);"
-    >
-    </div>
+    <div class="absolute inset-0" style="
+      background:
+        radial-gradient(ellipse 55% 45% at 18% 30%, oklch(from var(--color-accent) l c h / 0.28), transparent),
+        radial-gradient(ellipse 45% 55% at 82% 25%, oklch(from var(--color-gold) l c h / 0.18), transparent),
+        radial-gradient(ellipse 60% 40% at 55% 80%, oklch(from var(--color-accent-deep) l c h / 0.2), transparent);
+    "></div>
+    <!-- subtle breathing animation -->
+    <div class="absolute inset-0 hero-breathe"></div>
   </div>
 
-  <!-- baroque arch glyph behind wordmark -->
-  <svg
-    class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[58%] w-[min(92vw,820px)] h-auto opacity-[0.08] pointer-events-none"
-    viewBox="0 0 800 600"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="0.7"
-    aria-hidden="true"
-    style="color: var(--color-gold);"
-  >
-    <path d="M120 540 L120 280 Q120 100 400 100 Q680 100 680 280 L680 540" />
-    <path d="M150 540 L150 290 Q150 130 400 130 Q650 130 650 290 L650 540" />
-    <path d="M400 130 L400 540" stroke-dasharray="2 8" />
-    <circle cx="400" cy="130" r="3" fill="currentColor" />
-    <path d="M180 540 L620 540" />
-    <path d="M180 555 L620 555" />
-  </svg>
+  <!-- Decorative line grid — editorial feel -->
+  <div class="absolute inset-0 pointer-events-none opacity-[0.03]" aria-hidden="true" style="
+    background-image: linear-gradient(var(--color-gold) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--color-gold) 1px, transparent 1px);
+    background-size: 80px 80px;
+  "></div>
 
-  <!-- corner ornaments -->
-  <div
-    class="absolute top-6 left-6 opacity-50 text-[var(--color-gold-deep)]"
-    aria-hidden="true"
-  >
-    <svg
-      width="34"
-      height="34"
-      viewBox="0 0 40 40"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="0.7"
-    >
-      <path d="M2 2 L2 14 M2 2 L14 2" />
-      <path d="M2 2 Q10 2 14 14" opacity="0.5" />
-      <circle cx="2" cy="2" r="1" fill="currentColor" />
-    </svg>
-  </div>
-  <div
-    class="absolute top-6 right-6 opacity-50 text-[var(--color-gold-deep)] -scale-x-100"
-    aria-hidden="true"
-  >
-    <svg
-      width="34"
-      height="34"
-      viewBox="0 0 40 40"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="0.7"
-    >
-      <path d="M2 2 L2 14 M2 2 L14 2" />
-      <path d="M2 2 Q10 2 14 14" opacity="0.5" />
-      <circle cx="2" cy="2" r="1" fill="currentColor" />
-    </svg>
-  </div>
-  <div
-    class="absolute bottom-6 left-6 opacity-50 text-[var(--color-gold-deep)] -scale-y-100"
-    aria-hidden="true"
-  >
-    <svg
-      width="34"
-      height="34"
-      viewBox="0 0 40 40"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="0.7"
-    >
-      <path d="M2 2 L2 14 M2 2 L14 2" />
-      <path d="M2 2 Q10 2 14 14" opacity="0.5" />
-      <circle cx="2" cy="2" r="1" fill="currentColor" />
-    </svg>
-  </div>
-  <div
-    class="absolute bottom-6 right-6 opacity-50 text-[var(--color-gold-deep)] -scale-100"
-    aria-hidden="true"
-  >
-    <svg
-      width="34"
-      height="34"
-      viewBox="0 0 40 40"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="0.7"
-    >
-      <path d="M2 2 L2 14 M2 2 L14 2" />
-      <path d="M2 2 Q10 2 14 14" opacity="0.5" />
-      <circle cx="2" cy="2" r="1" fill="currentColor" />
-    </svg>
+  <!-- Large background letterform -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden="true">
+    <span class="display italic leading-none text-[var(--color-accent)] opacity-[0.04]"
+      style="font-size: clamp(20rem, 50vw, 56rem); letter-spacing: -0.08em;">
+      {siteConfig.name[0]}
+    </span>
   </div>
 
-  <div
-    class="container-narrow relative pt-12 pb-20 md:pt-16 md:pb-28 text-center w-full"
-  >
-    <!-- live status pill -->
-    <div class="flex justify-center mb-10 hero-fade" style="--d:0ms;">
-      <span
-        class:list={[
-          "inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border text-[0.66rem] uppercase tracking-[0.28em] backdrop-blur-sm",
-          isClosedToday
-            ? "border-white/20 text-white/70 bg-[oklch(0.13_0.018_25/0.55)]"
-            : "border-[var(--color-gold-deep)] text-[var(--color-gold-soft)] bg-[oklch(0.18_0.04_25/0.5)]",
-        ]}
-      >
-        <span
-          class:list={[
-            "h-1.5 w-1.5 rounded-full",
-            isClosedToday
-              ? "bg-white/50"
-              : "bg-[var(--color-gold)] hero-pulse",
-          ]}
-          aria-hidden="true"></span>
+  <!-- Corner marks -->
+  {["top-5 left-5", "top-5 right-5 -scale-x-100", "bottom-5 left-5 -scale-y-100", "bottom-5 right-5 -scale-100"].map((pos) => (
+    <svg class={`absolute ${pos} w-7 h-7 opacity-30 text-[var(--color-gold-deep)]`} viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="0.8" aria-hidden="true">
+      <path d="M2 2 L2 11 M2 2 L11 2"/>
+    </svg>
+  ))}
+
+  <div class="container-narrow relative z-10 py-24 md:py-36 text-center w-full">
+
+    <!-- Status pill -->
+    <div class="flex justify-center mb-10 hero-in" style="--d:0ms">
+      <span class={`inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border text-[0.64rem] uppercase tracking-[0.3em] backdrop-blur-sm ${isClosedToday ? "border-[var(--color-line-strong)] text-[var(--color-fg-muted)] bg-[oklch(from_var(--color-bg)_l_c_h_/_0.5)]" : "border-[var(--color-gold-deep)] text-[var(--color-gold-soft)] bg-[oklch(from_var(--color-surface)_l_c_h_/_0.65)]"}`}>
+        <span class={`h-1.5 w-1.5 rounded-full flex-shrink-0 ${isClosedToday ? "bg-[var(--color-fg-subtle)]" : "bg-[var(--color-gold)] status-pulse"}`} aria-hidden="true"></span>
         {isClosedToday ? t("hours.closedLabel") : t("hours.openNow")}
-        <span class="opacity-60">·</span>
-        <span class="opacity-80 normal-case tracking-[0.22em]">
-          {isClosedToday ? t("hours.closedSubline") : t("hours.openSubline")}
-        </span>
+        {!isClosedToday && todaySlot && (
+          <>
+            <span class="opacity-40">·</span>
+            <span class="opacity-70 normal-case tracking-[0.18em]">{todaySlot.open} – {todaySlot.close}</span>
+          </>
+        )}
       </span>
     </div>
 
-    <p class="eyebrow mb-8 hero-fade" style="--d:120ms;">{t("hero.eyebrow")}</p>
+    <!-- Eyebrow -->
+    <p class="eyebrow mb-6 md:mb-8 hero-in" style="--d:100ms">{t("hero.eyebrow")}</p>
 
-    <h1
-      class="display italic text-[var(--color-gold-soft)] leading-[0.9] hero-fade"
-      style="--d:200ms; font-size:clamp(4.5rem, 14vw, 11rem);"
-    >
+    <!-- Main title -->
+    <h1 class="display italic text-[var(--color-gold-soft)] hero-in" style="--d:180ms; font-size: clamp(3.8rem, 11vw, 9.5rem); line-height: 0.88;">
       {t("hero.title")}
     </h1>
 
-    <div class="hero-fade" style="--d:340ms;">
-      <Ornament class="my-10" />
+    <!-- Decorative gold rule -->
+    <div class="my-10 md:my-12 flex items-center justify-center gap-4 hero-in" style="--d:300ms" aria-hidden="true">
+      <span class="block h-px w-16 md:w-28 gold-rule"></span>
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" class="text-[var(--color-gold)] opacity-70" style="flex-shrink:0;">
+        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5Z"/>
+      </svg>
+      <span class="block h-px w-16 md:w-28 gold-rule"></span>
     </div>
 
-    <p
-      class="mx-auto max-w-xl text-lg md:text-xl text-[var(--color-fg-muted)] leading-relaxed font-light hero-fade"
-      style="--d:440ms;"
-    >
+    <!-- Subtitle -->
+    <p class="mx-auto max-w-lg text-lg md:text-xl text-[var(--color-fg-muted)] leading-relaxed font-light hero-in" style="--d:400ms">
       {t("hero.subtitle")}
     </p>
 
-    <div class="mt-12 flex flex-wrap justify-center gap-4 hero-fade" style="--d:560ms;">
-      <a href={localizedPath(locale, "/booking")} class="btn-primary">
-        {t("hero.cta")}
-      </a>
-      <a href="#hours" class="btn-ghost">
-        {t("hero.secondaryCta")}
-      </a>
+    <!-- CTAs -->
+    <div class="mt-12 flex flex-wrap justify-center gap-4 hero-in" style="--d:520ms">
+      <a href={localizedPath(locale, "/booking")} class="btn-primary">{t("hero.cta")}</a>
+      <a href="#hours" class="btn-ghost">{t("hero.secondaryCta")}</a>
     </div>
   </div>
 
-  <!-- scroll cue -->
-  <a
-    href="#about"
-    class="absolute bottom-4 left-1/2 -translate-x-1/2 text-[0.6rem] uppercase tracking-[0.32em] text-[var(--color-fg-subtle)] hover:text-[var(--color-gold)] transition-colors flex flex-col items-center gap-2"
-    aria-label="Scroll"
-  >
-    <span>{t("hero.tonight")}</span>
-    <span class="h-8 w-px bg-gradient-to-b from-[var(--color-gold-deep)] to-transparent"
-    ></span>
+  <!-- Scroll cue -->
+  <a href="#about" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-[var(--color-fg-subtle)] hover:text-[var(--color-gold)] transition-colors duration-300 hero-in" style="--d:700ms" aria-label="Scroll down">
+    <span class="text-[0.58rem] uppercase tracking-[0.35em]">{t("hero.tonight")}</span>
+    <span class="h-10 w-px scroll-line" style="background: linear-gradient(to bottom, var(--color-gold-deep), transparent);"></span>
   </a>
 </section>
 
 <style>
-  @keyframes hero-fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(12px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  @keyframes hero-in {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
-  .hero-fade {
+  .hero-in {
     opacity: 0;
-    animation: hero-fade-in 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    animation: hero-in 1.0s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     animation-delay: var(--d, 0ms);
   }
 
-  @keyframes hero-flicker {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    20% {
-      opacity: 0.96;
-    }
-    50% {
-      opacity: 1.02;
-    }
-    80% {
-      opacity: 0.97;
-    }
+  @keyframes breathe {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.88; }
   }
-  .hero-flicker {
+  .hero-breathe {
     background:
-      radial-gradient(
-        circle at 30% 40%,
-        oklch(0.7 0.15 60 / 0.05),
-        transparent 25%
-      ),
-      radial-gradient(
-        circle at 70% 60%,
-        oklch(0.7 0.15 40 / 0.04),
-        transparent 30%
-      );
-    animation: hero-flicker 6s ease-in-out infinite;
+      radial-gradient(ellipse 40% 35% at 25% 45%, oklch(from var(--color-gold) l c h / 0.06), transparent),
+      radial-gradient(ellipse 35% 40% at 75% 55%, oklch(from var(--color-accent) l c h / 0.05), transparent);
+    animation: breathe 7s ease-in-out infinite;
   }
 
-  @keyframes hero-pulse {
-    0%,
-    100% {
-      box-shadow: 0 0 0 0 oklch(0.79 0.115 80 / 0.5);
-    }
-    50% {
-      box-shadow: 0 0 0 4px oklch(0.79 0.115 80 / 0);
-    }
+  @keyframes pulse-ring {
+    0%, 100% { box-shadow: 0 0 0 0 oklch(from var(--color-gold) l c h / 0.55); }
+    50%       { box-shadow: 0 0 0 5px oklch(from var(--color-gold) l c h / 0); }
   }
-  .hero-pulse {
-    animation: hero-pulse 2.4s ease-in-out infinite;
+  .status-pulse { animation: pulse-ring 2.5s ease-in-out infinite; }
+
+  @keyframes scroll-drop {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    60%       { transform: translateY(6px); opacity: 0.4; }
   }
+  .scroll-line { animation: scroll-drop 2s ease-in-out infinite; }
 
   @media (prefers-reduced-motion: reduce) {
-    .hero-fade {
-      opacity: 1;
-      animation: none;
-      transform: none;
-    }
-    .hero-flicker,
-    .hero-pulse {
-      animation: none;
-    }
+    .hero-in { opacity: 1; animation: none; }
+    .hero-breathe, .status-pulse, .scroll-line { animation: none; }
   }
 </style>
