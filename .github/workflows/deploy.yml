@@ -2,7 +2,7 @@ name: Deploy to Cloudflare Pages
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 jobs:
   deploy:
@@ -12,19 +12,15 @@ jobs:
       deployments: write
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: npm
-
       - run: npm ci
-
       - run: npm run build
-
       - name: Deploy to Cloudflare Pages
-        run: npx wrangler pages deploy dist --project-name=${{ env.PROJECT_NAME }} --branch=main
+        run: npx wrangler pages deploy dist --project-name=${{ vars.CF_PROJECT_NAME }} --branch=master
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
-          PROJECT_NAME: ${{ vars.CF_PROJECT_NAME }}
+          CLOUDFLARE_API_TOKEN: ${{ vars.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ vars.CF_ACCOUNT_ID }}
+
