@@ -1,102 +1,102 @@
 {
   "nav": {
-    "home": "Accueil",
-    "menu": "Carte",
-    "booking": "Réservations",
+    "home": "Home",
+    "menu": "Menu",
+    "booking": "Reservations",
     "contact": "Contact"
   },
   "hero": {
-    "eyebrow": "Lieu · Quartier",
-    "tonight": "Ce soir",
-    "title": "Restaurant Name",
-    "subtitle": "Une expérience gastronomique intime.",
-    "cta": "Réserver une table",
-    "secondaryCta": "Voir les horaires"
+    "eyebrow": "In the beautiful Khanom",
+    "tonight": "Tonight",
+    "title": "Rueangrot Restaurant",
+    "subtitle": "Delicious German and Local Food",
+    "cta": "Reserve a table",
+    "secondaryCta": "View hours"
   },
   "about": {
-    "title": "La salle",
-    "pullquote": "Venez avec faim, restez tard.",
-    "body": "Une description du restaurant et de son ambiance."
+    "title": "The Restaurant",
+    "pullquote": "Enjoy our fresh food in our cosy garden",
+    "body": "Nestled in the beautiful beach road of Khanom"
   },
   "hours": {
-    "title": "Horaires",
-    "tonightLabel": "Ce soir",
-    "monday": "Lundi",
-    "tuesday": "Mardi",
-    "wednesday": "Mercredi",
-    "thursday": "Jeudi",
-    "friday": "Vendredi",
-    "saturday": "Samedi",
-    "sunday": "Dimanche",
-    "closed": "Fermé",
-    "openLabel": "Ouvert ce soir",
-    "closedLabel": "Fermé aujourd'hui",
-    "openNow": "Ouvert ce soir",
-    "openSubline": "Service jusqu'à minuit",
-    "openingTonight": "Ouverture ce soir",
-    "openingSubline": "Premier service à 18h00",
-    "closedSubline": "Voir la semaine ci-dessous"
+    "title": "Hours",
+    "tonightLabel": "Tonight",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday",
+    "closed": "Closed",
+    "openLabel": "Open this evening",
+    "closedLabel": "Closed today",
+    "openNow": "Open now",
+    "openSubline": "Open tonight",
+    "openingTonight": "Opening tonight",
+    "openingSubline": "See hours below",
+    "closedSubline": "See the week below"
   },
   "reservation": {
-    "line": "Quelques tables, c'est tout. Réservez la vôtre.",
-    "cta": "Réserver une table"
+    "line": "Reserve your table.",
+    "cta": "Reserve a table"
   },
   "menu": {
-    "title": "La carte",
-    "intro": "Une carte courte, écrite au fil des saisons.",
-    "comingSoon": "La carte complète arrive bientôt.",
-    "comingSoonSub": "Nous finalisons l'édition de la saison. En attendant, la salle vous guide à table parmi les plats du soir.",
-    "cta": "Réserver pour goûter ce soir"
+    "title": "Menu",
+    "intro": "Wonderful German food",
+    "comingSoon": "Full menu coming soon.",
+    "comingSoonSub": "Ask the kitchen about tonight's plates.",
+    "cta": "Reserve to taste tonight"
   },
   "booking": {
-    "title": "Réserver une table",
-    "intro": "Nous confirmons chaque réservation par WhatsApp. Le service commence à 18h00.",
+    "title": "Reserve a table",
+    "intro": "We confirm every booking by WhatsApp.",
     "meta": {
-      "title": "À propos de votre réservation",
+      "title": "Reservation note",
       "serviceLabel": "Service",
-      "serviceValue": "Mar – Dim · 18h00 – 00h00",
+      "serviceValue": "Tue - Sun - 12 to 9am",
       "confirmLabel": "Confirmation",
-      "confirmValue": "Réponse par WhatsApp, en général sous une heure.",
-      "directLabel": "Dernière minute ou grand groupe ?",
-      "directValue": "Joignez la salle directement sur WhatsApp."
+      "confirmValue": "Replied on WhatsApp.",
+      "directLabel": "Last-minute?",
+      "directValue": "Reach us directly on WhatsApp."
     },
-    "name": "Votre nom",
-    "phone": "Téléphone (avec indicatif)",
-    "email": "Email (facultatif)",
-    "partySize": "Nombre de personnes",
+    "name": "Your name",
+    "phone": "Phone (with country code)",
+    "email": "Email (optional)",
+    "partySize": "Number of guests",
     "date": "Date",
-    "time": "Heure",
-    "notes": "Quelque chose à nous dire ? Allergies, occasion…",
-    "submit": "Demander une réservation",
-    "submitting": "Envoi…",
-    "successTitle": "Merci.",
-    "successBody": "Votre demande est bien reçue. Nous confirmons par WhatsApp sous peu.",
-    "errorTitle": "Une erreur est survenue.",
-    "errorBody": "Merci de réessayer, ou contactez-nous directement sur WhatsApp."
+    "time": "Time",
+    "notes": "Anything we should know?",
+    "submit": "Request reservation",
+    "submitting": "Sending…",
+    "successTitle": "Thank you.",
+    "successBody": "Your request is in. We'll confirm by WhatsApp shortly.",
+    "errorTitle": "Something went wrong.",
+    "errorBody": "Please try again, or message us directly on WhatsApp."
   },
   "validation": {
-    "name": "Merci d'indiquer votre nom.",
-    "phone": "Numéro de téléphone invalide.",
-    "email": "Adresse email invalide.",
-    "partySize": "Le nombre de personnes doit être entre 1 et 20.",
-    "date": "Merci de choisir une date.",
-    "time": "Merci de choisir une heure."
+    "name": "Please enter your name.",
+    "phone": "Please enter a valid phone number.",
+    "email": "Please enter a valid email.",
+    "partySize": "Party size must be between 1 and 20.",
+    "date": "Please choose a date.",
+    "time": "Please choose a time."
   },
   "contact": {
-    "title": "Nous trouver",
-    "addressLabel": "Adresse",
-    "address": "L'adresse du restaurant ici",
+    "title": "Find us",
+    "addressLabel": "Address",
+    "address": "Na Dan Beach, Khanom",
     "whatsappLabel": "WhatsApp",
-    "directions": "Ouvrir dans Google Maps"
-  },
-  "footer": {
-    "tagline": "Restaurant Name · Lieu",
-    "rights": "Tous droits réservés.",
-    "addressShort": "Quartier, Ville",
-    "hoursShort": "Mar – Dim · 18h – Minuit"
+    "directions": "Open in Google Maps"
   },
   "social": {
-    "title": "Dernières nouvelles",
-    "follow": "Nous suivre"
+    "title": "Latest from the room",
+    "follow": "Follow us · Rueangrot"
+  },
+  "footer": {
+    "tagline": "Rueangrot Khanom",
+    "rights": "All rights reserved.",
+    "addressShort": "Na Dan - Khanom",
+    "hoursShort": "Tue - Sun - 12 to 9am"
   }
 }
